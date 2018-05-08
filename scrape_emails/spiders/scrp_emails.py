@@ -26,7 +26,6 @@ class ScrpEmailsSpider(scrapy.Spider):
             emailitem=ScrapeEmailsItem()
             emailitem['email'] = emails
             emailitem['source']=response.url
-            # emailitem['datetime']=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             emailitems.append(emailitem)
             return emailitems
 

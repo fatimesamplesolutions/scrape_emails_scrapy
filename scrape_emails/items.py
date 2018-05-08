@@ -13,4 +13,3 @@ class ScrapeEmailsItem(scrapy.Item):
     # name = scrapy.Field()
     email = scrapy.Field()
     source = scrapy.Field()
-    datetime = scrapy.Field()
