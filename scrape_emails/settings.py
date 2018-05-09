@@ -31,7 +31,7 @@ DOWNLOAD_DELAY = 9
 # The download delay setting will honor only one of:
 CONCURRENT_REQUESTS_PER_DOMAIN = 16
 CONCURRENT_REQUESTS_PER_IP = 16
-DOWNLOAD_TIMEOUT =10.
+DOWNLOAD_TIMEOUT =10
 RETRY_TIMES = 10
 
 # Disable cookies (enabled by default)

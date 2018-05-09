@@ -1,27 +1,14 @@
+from pprint import pprint
+
 import pandas as pd
-f=pd.read_csv("scraped_emails.csv")
+data = pd.read_csv('scraped_email.csv')
+lst = str(data['email'])
+lst = lst.replace("\"",'')
+lst = lst.replace("\n",'')
+lst = set(lst.split(','))
+lst1 = list(lst)
 
-from collections import OrderedDict
-f['emails'] = f.email.str.split().apply(lambda x: OrderedDict.fromkeys(x).keys()).str.join(' ')
-keep_col = ['emails','source']
-new_f = f[keep_col]
-new_f.to_csv("newFileee.csv", index=False)
+keep_col = ['email','source']
+new_f = data[keep_col]
+new_f.to_csv("scraped_emails_nodups.csv", index=False)
 
-# new_f['email'].drop_duplicates()
-
-
-
-
-# import csv
-#
-# reader=csv.reader(open('scraped_email.csv', 'r'), delimiter=',')
-# writer=csv.writer(open('myfilewithoutduplicates.csv', 'w'), delimiter=',')
-#
-# entries = set()
-#
-# for row in reader:
-#    key = (row[0]) # instead of just the last name
-#
-#    if key not in entries:
-#       writer.writerow(row)
-#       entries.add(key)
